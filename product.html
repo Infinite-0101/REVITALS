@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Product Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REVITALS | Flavors</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -11,51 +12,33 @@
 
     <nav class="navbar">
         <div class="logo"><a href="index.html">⚡ REVITALS</a></div>
-        <div class="cart-icon" onclick="toggleCart()">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count">0</span>
-        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="shop.html" class="nav-link active">Flavors</a></li>
+            <li class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </li>
+        </ul>
     </nav>
 
-    <section class="product-detail">
-        <div class="detail-left">
-            <img id="p-image" src="" alt="Bottle" onerror="this.src='assets/bottle-hero.png'">
-        </div>
-        <div class="detail-right">
-            <h1 id="p-name">Loading...</h1>
-            <h2 id="p-price">₹60</h2>
-            <p id="p-desc">Description loading...</p>
-            
-            <div class="info-box">
-                <h3>SPECIFICATIONS</h3>
-                <ul>
-                    <li>⚡ 500ml Bottle</li>
-                    <li>🥥 10% Coconut Water</li>
-                    <li>💪 800mg Electrolytes</li>
-                    <li>🌿 Vegan & Gluten Free</li>
-                </ul>
+    <section class="shop-section">
+        <h2 class="section-title">THE LINEUP</h2>
+        <div class="product-grid" id="shop-container">
             </div>
-
-            <div class="info-box">
-                <h3>INGREDIENTS (ALL NATURAL)</h3>
-                <p id="p-ingredients">Filtered Water, Coconut Water Concentrate...</p>
-            </div>
-
-            <button id="add-btn" class="btn-main">ADD TO CART</button>
-            <a href="shop.html" class="back-link">← Back to Flavors</a>
-        </div>
     </section>
 
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="toggleCart()">&times;</span>
             <h2>YOUR CART</h2>
-            <div id="cart-items"></div>
-            <div class="cart-total"><h3>Total: <span id="total-price">₹0</span></h3></div>
-            <button class="btn-whatsapp" onclick="checkoutWhatsApp()">CHECKOUT NOW</button>
+            <div id="cart-items" style="flex-grow: 1; overflow-y: auto;"></div>
+            <div class="cart-total" style="margin: 20px 0;"><h3>Total: <span id="total-price">₹0</span></h3></div>
+            <button class="btn-whatsapp" onclick="checkoutWhatsApp()">REQUEST ORDER</button>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+            
