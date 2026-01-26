@@ -157,14 +157,20 @@ function checkoutWhatsApp() {
 
 /* --- PAGE GENERATORS --- */
 
-// 1. SHOP PAGE (This adds the color variable to HTML)
+// 1. SHOP PAGE
 const shopContainer = document.getElementById('shop-container');
 if (shopContainer) {
-    // CHECK YOUR SCRIPT.JS - MAKE SURE THIS LINE IS CORRECT:
-shopContainer.innerHTML = products.map(p => `
-    <div class="product-card" style="--theme-color: ${p.color}">
-        `).join('');
-
+    shopContainer.innerHTML = products.map(p => `
+        <div class="product-card" style="--theme-color: ${p.color}">
+            <a href="product.html?id=${p.id}">
+                <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
+            </a>
+            <h3>${p.name}</h3>
+            <span class="price">₹${p.price}</span>
+            <button class="btn-main" onclick="addToCart(${p.id})">ADD</button>
+            <a href="product.html?id=${p.id}" class="view-link">View Details</a>
+        </div>
+    `).join('');
 }
 
 // 2. PRODUCT DETAIL PAGE
@@ -174,17 +180,37 @@ if (window.location.pathname.includes('product.html')) {
     const product = products.find(p => p.id === id);
 
     if (product) {
-        // Inject color into the whole page wrapper
         document.querySelector('.product-detail').style.setProperty('--theme-color', product.color);
-        
         document.getElementById('p-image').src = product.img;
         document.getElementById('p-name').innerText = product.name;
         document.getElementById('p-price').innerText = '₹' + product.price;
         document.getElementById('p-desc').innerText = product.desc;
-        document.getElementById('p-ingredients').innerText = product.ingredients;
         document.getElementById('p-benefits').innerHTML = product.benefits.map(b => `<li>${b}</li>`).join('');
         document.getElementById('p-specs').innerHTML = product.specs.map(s => `<li>${s}</li>`).join('');
+        
+        // Link the button to the NEW Specs Page
+        document.getElementById('specs-btn').href = `specs.html?id=${product.id}`;
         document.getElementById('add-btn').onclick = () => addToCart(product.id);
+    }
+}
+
+// 3. SPECS PAGE (NEW)
+if (window.location.pathname.includes('specs.html')) {
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get('id'));
+    const product = products.find(p => p.id === id);
+
+    if (product) {
+        // Set Theme Color
+        document.body.style.setProperty('--theme-color', product.color);
+        
+        document.getElementById('s-name').innerText = product.name;
+        document.getElementById('s-image').src = product.img;
+        document.getElementById('s-ingredients').innerText = product.ingredients;
+        document.getElementById('buy-now-btn').onclick = () => {
+            addToCart(product.id);
+            toggleCart(); // Open cart on the specs page
+        };
     }
 }
 
