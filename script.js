@@ -157,7 +157,7 @@ function checkoutWhatsApp() {
 
 /* --- PAGE GENERATORS --- */
 
-// 1. SHOP PAGE
+// 1. SHOP PAGE GENERATOR
 const shopContainer = document.getElementById('shop-container');
 if (shopContainer) {
     shopContainer.innerHTML = products.map(p => `
@@ -168,10 +168,11 @@ if (shopContainer) {
             <h3>${p.name}</h3>
             <span class="price">₹${p.price}</span>
             <button class="btn-main" onclick="addToCart(${p.id})">ADD</button>
-            <a href="product.html?id=${p.id}" class="view-link">View Details</a>
-        </div>
-    `).join('');
+            <a href="product.html?id=${p.id}" class="view-link">View Specs</a>
+        </div> 
+    `).join(''); 
 }
+
 
 // 2. PRODUCT DETAIL PAGE
 if (window.location.pathname.includes('product.html')) {
