@@ -19,21 +19,80 @@ const products = [
 let cart = JSON.parse(localStorage.getItem('revitalsCart')) || [];
 updateCartCount();
 
-function addToCart(id) {
-    const product = products.find(p => p.id === id);
-    if (product) {
-        cart.push(product);
-        localStorage.setItem('revitalsCart', JSON.stringify(cart));
-        updateCartCount();
+<div class="product-grid">
+    
+    <div class="product-card">
+        <a href="product.html?id=0"><img src="assets/blue.png" class="bottle-img"></a>
+        <h3>ELECTRIC BLUE</h3>
+        <div class="price">₹60</div>
+        <button class="btn-shop" onclick="addToCart(0)">ADD TO CART</button>
+    </div>
 
-        // *** NO ALERT HERE ***
-        
-        // Open the Cart Modal to show success
-        const modal = document.getElementById('cart-modal');
-        modal.style.display = "flex"; 
-        renderCartItems();
-    }
-}
+    <div class="product-card">
+        <a href="product.html?id=1"><img src="assets/red.png" class="bottle-img"></a>
+        <h3>CRIMSON PUNCH</h3>
+        <div class="price">₹60</div>
+        <button class="btn-shop" onclick="addToCart(1)">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+        <a href="product.html?id=2"><img src="assets/orange.png" class="bottle-img"></a>
+        <h3>CITRUS CHARGE</h3>
+        <div class="price">₹60</div>
+        <button class="btn-shop" onclick="addToCart(2)">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+        <a href="product.html?id=3"><img src="assets/purple.png" class="bottle-img"></a>
+        <h3>GRAVITY GRAPE</h3>
+        <div class="price">₹60</div>
+        <button class="btn-shop" onclick="addToCart(3)">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+        <a href="product.html?id=4"><img src="assets/green.png" class="bottle-img"></a>
+        <h3>LIME STRIKE</h3>
+        <div class="price">₹60</div>
+        <button class="btn-shop" onclick="addToCart(4)">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+        <a href="product.html?id=5"><img src="assets/cherry.png" class="bottle-img"></a>
+        <h3>CHERRY BOMB</h3>
+        <div class="price">₹60</div>
+        <button class="btn-shop" onclick="addToCart(5)">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+        <a href="product.html?id=6"><img src="assets/white.png" class="bottle-img"></a>
+        <h3>ARCTIC ICE</h3>
+        <div class="price">₹60</div>
+        <button class="btn-shop" onclick="addToCart(6)">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+        <a href="product.html?id=7"><img src="assets/pink.png" class="bottle-img"></a>
+        <h3>NEBULA NECTAR</h3>
+        <div class="price">₹60</div>
+        <button class="btn-shop" onclick="addToCart(7)">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+        <a href="product.html?id=8"><img src="assets/yellow.png" class="bottle-img"></a>
+        <h3>SOLAR FLARE</h3>
+        <div class="price">₹60</div>
+        <button class="btn-shop" onclick="addToCart(8)">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+        <a href="product.html?id=9"><img src="assets/melon.png" class="bottle-img"></a>
+        <h3>WATERMELON WAVE</h3>
+        <div class="price">₹60</div>
+        <button class="btn-shop" onclick="addToCart(9)">ADD TO CART</button>
+    </div>
+
+</div>
+
 
 function updateCartCount() {
     const countElements = document.querySelectorAll('#cart-count');
