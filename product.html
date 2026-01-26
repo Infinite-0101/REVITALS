@@ -20,23 +20,20 @@
 
     <section class="product-detail-container">
         <div class="detail-left">
-            <img id="p-image" src="" alt="Product Image" class="detail-img">
+            <img id="p-image" src="" alt="Product Image" class="detail-img" onerror="this.src='assets/bottle-hero.png'">
         </div>
         <div class="detail-right">
             <h1 id="p-title">Loading...</h1>
             <h2 id="p-price">₹0</h2>
             <p id="p-desc">Loading description...</p>
-            
             <div class="specs">
                 <h3>SPECIFICATIONS:</h3>
                 <ul>
                     <li>⚡ 3x Electrolytes</li>
                     <li>🥥 10% Coconut Water</li>
                     <li>🚫 Zero Added Sugar</li>
-                    <li>💪 B-Vitamins Blend</li>
                 </ul>
             </div>
-
             <button id="add-btn" class="btn-main">ADD TO CART</button>
             <a href="index.html" class="back-link">← Back to Shop</a>
         </div>
@@ -48,7 +45,7 @@
             <h2>YOUR CART</h2>
             <div id="cart-items"></div>
             <div class="cart-total"><h3>Total: <span id="total-price">₹0</span></h3></div>
-            <button class="btn-whatsapp" onclick="checkoutWhatsApp()"><i class="fab fa-whatsapp"></i> CHECKOUT</button>
+            <button class="btn-whatsapp" onclick="checkoutWhatsApp()">CHECKOUT</button>
         </div>
     </div>
 
