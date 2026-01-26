@@ -1,7 +1,9 @@
 // --- 1. CONFIGURATION ---
-const phoneNumber = "919920799976"; 
+const phoneNumber = "919920799976"; // REPLACE WITH YOUR NUMBER
 
-// --- 2. PRODUCT DATABASE ---
+// --- 2. DATABASE ---
+// Make sure these image names match your files in the assets folder!
+// If a file is missing, it will default to bottle-hero.png
 const products = [
     { id: 0, name: "Electric Blue", price: 60, image: "assets/blue.png", desc: "Intense Blue Raspberry.", color: "#00e5ff" },
     { id: 1, name: "Crimson Punch", price: 60, image: "assets/red.png", desc: "Tropical Berry Blast.", color: "#ff0040" },
@@ -15,84 +17,33 @@ const products = [
     { id: 9, name: "Watermelon Wave", price: 60, image: "assets/melon.png", desc: "Sweet Melon.", color: "#ff6b6b" }
 ];
 
-// --- 3. CART SYSTEM ---
+// --- 3. AUTO-REPAIR (Fixes the "Not Working" issue) ---
+// This runs once to clear old broken data from your previous attempts.
+if (!localStorage.getItem('revitals_v2_fix')) {
+    localStorage.clear();
+    localStorage.setItem('revitals_v2_fix', 'true');
+    console.log("System Repaired: Old data cleared.");
+}
+
+// --- 4. CART SYSTEM ---
 let cart = JSON.parse(localStorage.getItem('revitalsCart')) || [];
 updateCartCount();
 
-<div class="product-grid">
-    
-    <div class="product-card">
-        <a href="product.html?id=0"><img src="assets/blue.png" class="bottle-img"></a>
-        <h3>ELECTRIC BLUE</h3>
-        <div class="price">₹60</div>
-        <button class="btn-shop" onclick="addToCart(0)">ADD TO CART</button>
-    </div>
-
-    <div class="product-card">
-        <a href="product.html?id=1"><img src="assets/red.png" class="bottle-img"></a>
-        <h3>CRIMSON PUNCH</h3>
-        <div class="price">₹60</div>
-        <button class="btn-shop" onclick="addToCart(1)">ADD TO CART</button>
-    </div>
-
-    <div class="product-card">
-        <a href="product.html?id=2"><img src="assets/orange.png" class="bottle-img"></a>
-        <h3>CITRUS CHARGE</h3>
-        <div class="price">₹60</div>
-        <button class="btn-shop" onclick="addToCart(2)">ADD TO CART</button>
-    </div>
-
-    <div class="product-card">
-        <a href="product.html?id=3"><img src="assets/purple.png" class="bottle-img"></a>
-        <h3>GRAVITY GRAPE</h3>
-        <div class="price">₹60</div>
-        <button class="btn-shop" onclick="addToCart(3)">ADD TO CART</button>
-    </div>
-
-    <div class="product-card">
-        <a href="product.html?id=4"><img src="assets/green.png" class="bottle-img"></a>
-        <h3>LIME STRIKE</h3>
-        <div class="price">₹60</div>
-        <button class="btn-shop" onclick="addToCart(4)">ADD TO CART</button>
-    </div>
-
-    <div class="product-card">
-        <a href="product.html?id=5"><img src="assets/cherry.png" class="bottle-img"></a>
-        <h3>CHERRY BOMB</h3>
-        <div class="price">₹60</div>
-        <button class="btn-shop" onclick="addToCart(5)">ADD TO CART</button>
-    </div>
-
-    <div class="product-card">
-        <a href="product.html?id=6"><img src="assets/white.png" class="bottle-img"></a>
-        <h3>ARCTIC ICE</h3>
-        <div class="price">₹60</div>
-        <button class="btn-shop" onclick="addToCart(6)">ADD TO CART</button>
-    </div>
-
-    <div class="product-card">
-        <a href="product.html?id=7"><img src="assets/pink.png" class="bottle-img"></a>
-        <h3>NEBULA NECTAR</h3>
-        <div class="price">₹60</div>
-        <button class="btn-shop" onclick="addToCart(7)">ADD TO CART</button>
-    </div>
-
-    <div class="product-card">
-        <a href="product.html?id=8"><img src="assets/yellow.png" class="bottle-img"></a>
-        <h3>SOLAR FLARE</h3>
-        <div class="price">₹60</div>
-        <button class="btn-shop" onclick="addToCart(8)">ADD TO CART</button>
-    </div>
-
-    <div class="product-card">
-        <a href="product.html?id=9"><img src="assets/melon.png" class="bottle-img"></a>
-        <h3>WATERMELON WAVE</h3>
-        <div class="price">₹60</div>
-        <button class="btn-shop" onclick="addToCart(9)">ADD TO CART</button>
-    </div>
-
-</div>
-
+function addToCart(id) {
+    const product = products.find(p => p.id === id);
+    if (product) {
+        cart.push(product);
+        localStorage.setItem('revitalsCart', JSON.stringify(cart));
+        updateCartCount();
+        
+        // Open Cart immediately
+        const modal = document.getElementById('cart-modal');
+        if(modal) {
+            modal.style.display = "flex";
+            renderCartItems();
+        }
+    }
+}
 
 function updateCartCount() {
     const countElements = document.querySelectorAll('#cart-count');
@@ -124,7 +75,7 @@ function renderCartItems() {
                 <div class="cart-item">
                     <span>${item.name}</span>
                     <span>₹${item.price}</span>
-                    <span style="color:red; cursor:pointer; font-weight:bold; margin-left:10px;" onclick="removeFromCart(${index})">✕</span>
+                    <span class="remove-btn" onclick="removeFromCart(${index})">✕</span>
                 </div>
             `;
         });
@@ -141,8 +92,7 @@ function removeFromCart(index) {
 
 function checkoutWhatsApp() {
     if (cart.length === 0) {
-        // Simple log instead of alert if you prefer, or keep this one alert for error
-        alert("Cart is empty!"); 
+        alert("Your cart is empty!");
         return;
     }
     
@@ -157,7 +107,7 @@ function checkoutWhatsApp() {
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
 }
 
-// --- 4. PAGE LOADER (Product Details) ---
+// --- 5. PAGE LOADER ---
 if (window.location.pathname.includes("product.html")) {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = parseInt(urlParams.get('id'));
@@ -173,7 +123,7 @@ if (window.location.pathname.includes("product.html")) {
     }
 }
 
-// --- 5. CLOSE MODAL CLICK OUTSIDE ---
+// Close modal when clicking outside
 window.onclick = function(event) {
     const modal = document.getElementById('cart-modal');
     if (event.target == modal) {
