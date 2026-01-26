@@ -1,6 +1,6 @@
 // --- CONFIGURATION ---
 // REPLACE THIS WITH YOUR OWN WHATSAPP NUMBER (Don't use +)
-const myPhoneNumber = "919876543210"; 
+const myPhoneNumber = "919920799976"; 
 
 // --- CART LOGIC ---
 let cart = [];
