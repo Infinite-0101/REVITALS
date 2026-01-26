@@ -160,17 +160,11 @@ function checkoutWhatsApp() {
 // 1. SHOP PAGE (This adds the color variable to HTML)
 const shopContainer = document.getElementById('shop-container');
 if (shopContainer) {
-    shopContainer.innerHTML = products.map(p => `
-        <div class="product-card" style="--theme-color: ${p.color}">
-            <a href="product.html?id=${p.id}">
-                <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
-            </a>
-            <h3>${p.name}</h3>
-            <span class="price">₹${p.price}</span>
-            <button class="btn-main" onclick="addToCart(${p.id})">ADD</button>
-            <a href="product.html?id=${p.id}" class="view-link">View Specs</a>
-        </div>
-    `).join('');
+    // CHECK YOUR SCRIPT.JS - MAKE SURE THIS LINE IS CORRECT:
+shopContainer.innerHTML = products.map(p => `
+    <div class="product-card" style="--theme-color: ${p.color}">
+        `).join('');
+
 }
 
 // 2. PRODUCT DETAIL PAGE
