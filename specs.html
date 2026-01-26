@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Specifications | ReVitals</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="background: #050505;">
+
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">⚡ REVITALS</a></div>
+        <a href="shop.html" class="nav-link">← BACK TO SHOP</a>
+    </nav>
+
+    <section class="specs-page-container">
+        <div class="specs-header">
+            <h1 id="s-name">LOADING...</h1>
+            <p class="subtitle">OFFICIAL PRODUCT DATASHEET</p>
+        </div>
+
+        <div class="specs-content">
+            <div class="specs-left">
+                <img id="s-image" src="" alt="Product Reference" onerror="this.style.display='none'">
+            </div>
+
+            <div class="specs-right">
+                
+                <div class="tech-box">
+                    <h3>NUTRITIONAL INFORMATION (Per 500ml)</h3>
+                    <table class="specs-table">
+                        <tr><td>Calories</td><td>10 kcal</td></tr>
+                        <tr><td>Total Fat</td><td>0g</td></tr>
+                        <tr><td>Sodium</td><td>250mg</td></tr>
+                        <tr><td>Potassium</td><td>150mg</td></tr>
+                        <tr><td>Total Sugars</td><td>0g</td></tr>
+                        <tr><td>Protein</td><td>0g</td></tr>
+                    </table>
+                </div>
+
+                <div class="tech-box">
+                    <h3>FULL INGREDIENT LIST</h3>
+                    <p id="s-ingredients" style="color: #ccc; line-height: 1.6;">Loading data...</p>
+                </div>
+
+                <div class="tech-box">
+                    <h3>CERTIFICATIONS & COMPLIANCE</h3>
+                    <ul class="cert-list" id="s-certs">
+                        <li>✅ ISO 22000 Certified Production</li>
+                        <li>✅ Banned Substance Tested (Informed Choice)</li>
+                        <li>✅ Vegan & Gluten-Free</li>
+                        <li>✅ Non-GMO Sourced</li>
+                    </ul>
+                </div>
+
+                <button id="buy-now-btn" class="btn-main" style="width: 100%; margin-top: 20px;">ADD TO CART & CHECKOUT</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    
+    <style>
+        .specs-page-container { padding: 50px 10%; }
+        .specs-header { text-align: center; margin-bottom: 50px; border-bottom: 1px solid #333; padding-bottom: 20px; }
+        .specs-header h1 { font-family: 'Oswald', sans-serif; font-size: 3.5rem; color: var(--theme-color); text-transform: uppercase; }
+        .subtitle { color: #888; letter-spacing: 2px; }
+        
+        .specs-content { display: flex; flex-wrap: wrap; gap: 40px; }
+        .specs-left { flex: 1; display: flex; justify-content: center; align-items: flex-start; }
+        .specs-left img { width: 100%; max-width: 300px; border: 1px solid #333; padding: 20px; border-radius: 10px; background: #111; }
+        
+        .specs-right { flex: 2; }
+        .tech-box { background: #111; padding: 25px; margin-bottom: 20px; border-left: 3px solid var(--theme-color); border-radius: 0 10px 10px 0; }
+        .tech-box h3 { font-family: 'Oswald', sans-serif; color: #fff; margin-bottom: 15px; font-size: 1.2rem; }
+        
+        .specs-table { width: 100%; border-collapse: collapse; }
+        .specs-table td { padding: 10px; border-bottom: 1px solid #222; color: #ccc; }
+        .specs-table tr:last-child td { border-bottom: none; }
+        .specs-table td:last-child { text-align: right; font-weight: bold; color: #fff; }
+        
+        .cert-list { list-style: none; }
+        .cert-list li { margin-bottom: 8px; color: #aaa; }
+    </style>
+</body>
+</html>
