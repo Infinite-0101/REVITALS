@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REVITALS | Flavors</title>
+    <title>Product Details</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -12,20 +12,39 @@
 
     <nav class="navbar">
         <div class="logo"><a href="index.html">⚡ REVITALS</a></div>
-        <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="shop.html" class="nav-link active">Flavors</a></li>
-            <li class="cart-icon" onclick="toggleCart()">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </li>
-        </ul>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
     </nav>
 
-    <section class="shop-section">
-        <h2 class="section-title">THE LINEUP</h2>
-        <div class="product-grid" id="shop-container">
+    <section class="product-detail">
+        <div class="detail-left">
+            <img id="p-image" src="" alt="Bottle" onerror="this.style.display='none'">
+        </div>
+        
+        <div class="detail-right">
+            <h1 id="p-name">Loading...</h1>
+            <h2 id="p-price">₹60</h2>
+            <p id="p-desc">Loading description...</p>
+            
+            <button id="add-btn" class="btn-main" style="width: 100%; margin-bottom: 15px;">ADD TO CART</button>
+            
+            <a id="specs-btn" href="#" class="view-link" style="display:block; text-align:center; padding: 10px; border: 1px solid #333; margin-bottom: 30px; text-transform: uppercase; font-weight:bold;">📄 View Full Datasheet & Specs</a>
+
+            <div class="specs-grid">
+                <div class="info-box">
+                    <h3>⚡ BENEFITS</h3>
+                    <ul id="p-benefits"></ul>
+                </div>
+                <div class="info-box">
+                    <h3>📊 HIGHLIGHTS</h3>
+                    <ul id="p-specs"></ul>
+                </div>
             </div>
+
+            <a href="shop.html" class="back-link">← Back to Flavors</a>
+        </div>
     </section>
 
     <div id="cart-modal" class="modal">
@@ -38,7 +57,8 @@
         </div>
     </div>
 
+    <div id="toast-container"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
-            
