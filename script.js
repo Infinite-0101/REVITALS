@@ -25,11 +25,20 @@ function addToCart(id) {
         cart.push(product);
         localStorage.setItem('revitalsCart', JSON.stringify(cart)); // Save to memory
         updateCartCount();
-        alert(`${product.name} added to cart! ⚡`);
+
+        // --- REMOVED THE POP-UP ALERT HERE ---
+
+        // OPTIONAL: Automatically open the cart so the user sees the item
+        const modal = document.getElementById('cart-modal');
+        if (modal) {
+            modal.style.display = "flex"; // Opens the cart immediately
+            renderCartItems(); // Updates the list inside the cart
+        }
     } else {
         console.error("Product ID not found:", id);
     }
 }
+
 
 function updateCartCount() {
     const countElements = document.querySelectorAll('#cart-count');
