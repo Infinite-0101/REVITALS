@@ -13,8 +13,7 @@
     <nav class="navbar">
         <div class="logo">⚡ REVITALS</div>
         <ul class="nav-menu">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#shop" class="nav-link">Flavors</a></li>
+            <li><a href="index.html" class="nav-link">Home</a></li>
             <li class="cart-icon" onclick="toggleCart()">
                 <i class="fas fa-shopping-cart"></i>
                 <span id="cart-count">0</span>
@@ -40,125 +39,91 @@
         <div class="product-grid">
             
             <div class="product-card">
-                <img src="assets/bottle-hero.png" class="bottle-img" style="filter: hue-rotate(0deg);">
+                <a href="product.html?id=0"><img src="assets/blue.png" class="bottle-img" onerror="this.src='assets/bottle-hero.png'"></a>
                 <h3>ELECTRIC BLUE</h3>
-                <p>Blue Raspberry</p>
                 <div class="price">₹60</div>
-                <button class="btn-shop" onclick="addToCart('Electric Blue', 60)">ADD TO CART</button>
+                <button class="btn-shop" onclick="addToCart(0)">ADD TO CART</button>
             </div>
 
             <div class="product-card">
-                <img src="assets/bottle-hero.png" class="bottle-img" style="filter: hue-rotate(140deg);">
+                <a href="product.html?id=1"><img src="assets/red.png" class="bottle-img" onerror="this.src='assets/bottle-hero.png'"></a>
                 <h3>CRIMSON PUNCH</h3>
-                <p>Tropical Berry</p>
                 <div class="price">₹60</div>
-                <button class="btn-shop" onclick="addToCart('Crimson Punch', 60)">ADD TO CART</button>
+                <button class="btn-shop" onclick="addToCart(1)">ADD TO CART</button>
             </div>
 
             <div class="product-card">
-                <img src="assets/bottle-hero.png" class="bottle-img" style="filter: hue-rotate(40deg);">
+                <a href="product.html?id=2"><img src="assets/orange.png" class="bottle-img" onerror="this.src='assets/bottle-hero.png'"></a>
                 <h3>CITRUS CHARGE</h3>
-                <p>Orange Mango</p>
                 <div class="price">₹60</div>
-                <button class="btn-shop" onclick="addToCart('Citrus Charge', 60)">ADD TO CART</button>
+                <button class="btn-shop" onclick="addToCart(2)">ADD TO CART</button>
             </div>
 
             <div class="product-card">
-                <img src="assets/bottle-hero.png" class="bottle-img" style="filter: hue-rotate(260deg);">
+                <a href="product.html?id=3"><img src="assets/purple.png" class="bottle-img" onerror="this.src='assets/bottle-hero.png'"></a>
                 <h3>GRAVITY GRAPE</h3>
-                <p>Concord Grape</p>
                 <div class="price">₹60</div>
-                <button class="btn-shop" onclick="addToCart('Gravity Grape', 60)">ADD TO CART</button>
+                <button class="btn-shop" onclick="addToCart(3)">ADD TO CART</button>
             </div>
 
             <div class="product-card">
-                <img src="assets/bottle-hero.png" class="bottle-img" style="filter: hue-rotate(90deg);">
+                <a href="product.html?id=4"><img src="assets/green.png" class="bottle-img" onerror="this.src='assets/bottle-hero.png'"></a>
                 <h3>LIME STRIKE</h3>
-                <p>Lemon Lime</p>
                 <div class="price">₹60</div>
-                <button class="btn-shop" onclick="addToCart('Lime Strike', 60)">ADD TO CART</button>
+                <button class="btn-shop" onclick="addToCart(4)">ADD TO CART</button>
             </div>
 
             <div class="product-card">
-                <img src="assets/bottle-hero.png" class="bottle-img" style="filter: hue-rotate(320deg);">
+                <a href="product.html?id=5"><img src="assets/cherry.png" class="bottle-img" onerror="this.src='assets/bottle-hero.png'"></a>
                 <h3>CHERRY BOMB</h3>
-                <p>Wild Cherry</p>
                 <div class="price">₹60</div>
-                <button class="btn-shop" onclick="addToCart('Cherry Bomb', 60)">ADD TO CART</button>
+                <button class="btn-shop" onclick="addToCart(5)">ADD TO CART</button>
             </div>
 
             <div class="product-card">
-                <img src="assets/bottle-hero.png" class="bottle-img" style="filter: hue-rotate(190deg);">
+                <a href="product.html?id=6"><img src="assets/white.png" class="bottle-img" onerror="this.src='assets/bottle-hero.png'"></a>
                 <h3>ARCTIC ICE</h3>
-                <p>Frost Berry</p>
                 <div class="price">₹60</div>
-                <button class="btn-shop" onclick="addToCart('Arctic Ice', 60)">ADD TO CART</button>
+                <button class="btn-shop" onclick="addToCart(6)">ADD TO CART</button>
             </div>
 
             <div class="product-card">
-                <img src="assets/bottle-hero.png" class="bottle-img" style="filter: hue-rotate(290deg);">
+                <a href="product.html?id=7"><img src="assets/pink.png" class="bottle-img" onerror="this.src='assets/bottle-hero.png'"></a>
                 <h3>NEBULA NECTAR</h3>
-                <p>Mystery Flavor</p>
                 <div class="price">₹60</div>
-                <button class="btn-shop" onclick="addToCart('Nebula Nectar', 60)">ADD TO CART</button>
+                <button class="btn-shop" onclick="addToCart(7)">ADD TO CART</button>
             </div>
 
             <div class="product-card">
-                <img src="assets/bottle-hero.png" class="bottle-img" style="filter: hue-rotate(60deg);">
+                <a href="product.html?id=8"><img src="assets/yellow.png" class="bottle-img" onerror="this.src='assets/bottle-hero.png'"></a>
                 <h3>SOLAR FLARE</h3>
-                <p>Peach Mango</p>
                 <div class="price">₹60</div>
-                <button class="btn-shop" onclick="addToCart('Solar Flare', 60)">ADD TO CART</button>
+                <button class="btn-shop" onclick="addToCart(8)">ADD TO CART</button>
             </div>
 
             <div class="product-card">
-                <img src="assets/bottle-hero.png" class="bottle-img" style="filter: hue-rotate(350deg);">
+                <a href="product.html?id=9"><img src="assets/melon.png" class="bottle-img" onerror="this.src='assets/bottle-hero.png'"></a>
                 <h3>WATERMELON WAVE</h3>
-                <p>Sweet Melon</p>
                 <div class="price">₹60</div>
-                <button class="btn-shop" onclick="addToCart('Watermelon Wave', 60)">ADD TO CART</button>
+                <button class="btn-shop" onclick="addToCart(9)">ADD TO CART</button>
             </div>
 
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <h2>STAY HYDRATED.</h2>
-            <div class="footer-links">
-                <a href="#" onclick="openPrivacy()">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-            <p>&copy; 2026 ReVitals Inc.</p>
-        </div>
+        <p>&copy; 2026 ReVitals Inc.</p>
     </footer>
 
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="toggleCart()">&times;</span>
             <h2>YOUR CART</h2>
-            <div id="cart-items">
-                <p>Your cart is empty.</p>
-            </div>
-            <div class="cart-total">
-                <h3>Total: <span id="total-price">₹0</span></h3>
-            </div>
+            <div id="cart-items"></div>
+            <div class="cart-total"><h3>Total: <span id="total-price">₹0</span></h3></div>
             <button class="btn-whatsapp" onclick="checkoutWhatsApp()">
                 <i class="fab fa-whatsapp"></i> CHECKOUT ON WHATSAPP
             </button>
-        </div>
-    </div>
-
-    <div id="privacy-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closePrivacy()">&times;</span>
-            <h2>PRIVACY POLICY</h2>
-            <p style="text-align: left; margin-top: 20px; line-height: 1.6;">
-                <strong>1. Data Collection:</strong> We collect only the information necessary to process your order via WhatsApp (Name, Order Details).<br><br>
-                <strong>2. Usage:</strong> Your data is not stored on any server. It is transmitted directly to our sales team via encrypted WhatsApp messaging.<br><br>
-                <strong>3. Cookies:</strong> This website uses local storage to remember your cart items temporarily.<br><br>
-                <strong>4. Contact:</strong> For privacy concerns, contact support@revitals.com.
-            </p>
         </div>
     </div>
 
