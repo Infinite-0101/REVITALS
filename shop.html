@@ -3,86 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReVitals | Shop</title>
+    <title>REVITALS | Flavors</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <section id="header">
-        <a href="#"><img src="assets/logo.png" class="logo" alt="logo" width="120"></a>
-        <div>
-            <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a class="active" href="shop.html">Shop</a></li>
-                <li><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
-            </ul>
-        </div>
-    </section>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">⚡ REVITALS</a></div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="shop.html" class="nav-link active">Flavors</a></li>
+            <li class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </li>
+        </ul>
+    </nav>
 
-    <section id="product1" class="section-p1">
-        <h2>CHOOSE YOUR FUEL</h2>
-        <div class="pro-container">
-
-            <div class="pro" onclick="window.location.href='sproduct.html';">
-                <img src="assets/blue.png" alt="Refuel">
-                <div class="des">
-                    <span>ReVitals</span>
-                    <h5>Refuel (Blue Raspberry)</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$60</h4>
-                </div>
-                <a href="#" class="cart-btn"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="assets/red.png" alt="Crimson">
-                <div class="des">
-                    <span>ReVitals</span>
-                    <h5>Crimson Punch</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$60</h4>
-                </div>
-                <a href="#" class="cart-btn"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="assets/orange.png" alt="Citrus">
-                <div class="des">
-                    <span>ReVitals</span>
-                    <h5>Citrus Charge</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$60</h4>
-                </div>
-                <a href="#" class="cart-btn"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-            
+    <section class="shop-section">
+        <h2 class="section-title">THE LINEUP</h2>
+        <div class="product-grid" id="shop-container">
             </div>
     </section>
 
-    <footer class="section-p1">
-        <div class="copyright">
-            <p>© 2026 ReVitals Inc.</p>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="toggleCart()">&times;</span>
+            <h2>YOUR CART</h2>
+            <div id="cart-items" style="flex-grow: 1; overflow-y: auto;"></div>
+            <div class="cart-total" style="margin: 20px 0;"><h3>Total: <span id="total-price">₹0</span></h3></div>
+            <button class="btn-whatsapp" onclick="checkoutWhatsApp()">REQUEST ORDER</button>
         </div>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
