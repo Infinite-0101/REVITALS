@@ -1,79 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReVitals</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <title>REVITALS | Home</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
 
-    <section id="header">
-        <a href="#"><img src="assets/logo.png" class="logo" alt="logo" width="100"></a>
-        <div>
-            <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li id="lg-bag"><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
-                <a href="#" id="close"><i class="far fa-times"></i></a>
-            </ul>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">⚡ REVITALS</a></div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="shop.html" class="nav-link">Flavors</a></li>
+            <li class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>UNLEASH <br><span class="highlight">YOUR ENERGY</span></h1>
+            <p>100% NATURAL. NO SUGAR. NO PRESERVATIVES.</p>
+            <a href="shop.html" class="btn-main">EXPLORE FLAVORS</a>
+        </div>
+        <div class="hero-image">
+            <img src="assets/bottle-hero.png" alt="ReVitals Hero" class="floating">
         </div>
     </section>
 
-    <section id="hero">
-        <h4>Trade-in-offer</h4>
-        <h2>Super value deals</h2>
-        <h1>On all products</h1>
-        <p>Save more with coupons & up to 70% off!</p>
-        <button>Shop Now</button>
-    </section>
-
-    <section id="feature" class="section-p1">
-        <div class="fe-box">
-            <img src="assets/features/f1.png" alt="" onerror="this.style.display='none'">
-            <h6>Free Shipping</h6>
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
         </div>
-        <div class="fe-box">
-            <img src="assets/features/f2.png" alt="" onerror="this.style.display='none'">
-            <h6>Online Order</h6>
-        </div>
-        <div class="fe-box">
-            <img src="assets/features/f3.png" alt="" onerror="this.style.display='none'">
-            <h6>Save Money</h6>
-        </div>
-        <div class="fe-box">
-            <img src="assets/features/f4.png" alt="" onerror="this.style.display='none'">
-            <h6>Promotions</h6>
-        </div>
-    </section>
+        <p>&copy; 2026 ReVitals Inc.</p>
+    </footer>
 
-    <section id="product1" class="section-p1">
-        <h2>Featured Products</h2>
-        <p>Summer Collection New Modern Design</p>
-        <div class="pro-container">
-            
-            <div class="pro">
-                <img src="assets/blue.png" alt="">
-                <div class="des">
-                    <span>ReVitals</span>
-                    <h5>Refuel (Blue Raspberry)</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$60</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="toggleCart()">&times;</span>
+            <h2>YOUR CART</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total"><h3>Total: <span id="total-price">₹0</span></h3></div>
+            <button class="btn-whatsapp" onclick="checkoutWhatsApp()">
+                <i class="fab fa-whatsapp"></i> CHECKOUT NOW
+            </button>
+        </div>
+    </div>
 
-            
-
+    <script src="script.js"></script>
+</body>
+</html>
